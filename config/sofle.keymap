@@ -1095,6 +1095,20 @@
                 <&macro_release>,
                 <&kp LALT>;
         };
+
+        open_calc: open_calc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&mo 1>,
+                <&macro_tap>,
+                <&open_calc>,
+                <&macro_release>,
+                <&mo 1>;
+
+            label = "OPEN_CALC";
+        };
     };
 };
 
@@ -1651,11 +1665,11 @@
             //              |      |       |       |      |      |  |      |  0   |  0  |   0   |   .  |
 
             bindings = <
-&td_btr  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                                  &kp CLEAR  &kp KP_EQUAL     &kp KP_DIVIDE   &kp KP_MULTIPLY  &kp KP_MINUS   &trans
-&trans   &kp PSCRN     &kp INS       &kp UP        &kp AT        &kp PRCNT                                     &kp LC(X)  &kp N7           &kp N8          &kp N9           &kp KP_PLUS    &trans
-&trans   &kp LC(X)     &kp LEFT      &kp DOWN      &kp RIGHT     &kp DLLR                                      &kp LC(V)  &kp N4           &kp N5          &kp N6           &kp KP_ENTER   &kp F4
-&kp F4   &kp LC(Y)     &kp LC(Z)     &kp LC(C)     &kp LC(V)     &kp HASH      &kp C_PLAY_PAUSE    &kp K_CALC  &kp LC(C)  &kp N1           &kp N2          &kp N3           &kp BACKSPACE  &kp LC(Z)
-                       &trans        &kp LA(C)     &kp EXCL      &kp QMARK     &kp TILDE           &to 2       &kp N0     &kp PRINTSCREEN  &kp LANGUAGE_2  &kp DOT
+&td_btr  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                                  &kp KP_NUM  &kp KP_EQUAL     &kp KP_DIVIDE   &kp KP_MULTIPLY  &kp KP_MINUS   &trans
+&trans   &kp PSCRN     &kp INS       &kp UP        &kp AT        &kp PRCNT                                     &kp LC(X)   &kp N7           &kp N8          &kp N9           &kp KP_PLUS    &trans
+&trans   &kp LC(X)     &kp LEFT      &kp DOWN      &kp RIGHT     &kp DLLR                                      &kp LC(V)   &kp N4           &kp N5          &kp N6           &kp KP_ENTER   &kp F4
+&kp F4   &kp LC(Y)     &kp LC(Z)     &kp LC(C)     &kp LC(V)     &kp HASH      &kp C_PLAY_PAUSE    &open_calc  &kp LC(C)   &kp N1           &kp N2          &kp N3           &kp BACKSPACE  &kp LC(Z)
+                       &trans        &kp LA(C)     &kp EXCL      &kp QMARK     &kp TILDE           &to 2       &kp N0      &kp PRINTSCREEN  &kp LANGUAGE_2  &kp DOT
             >;
 
             sensor-bindings = <&inc_dec_kp C_FAST_FORWARD C_REWIND>;
